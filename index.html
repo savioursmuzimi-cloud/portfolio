@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Saviours Muzimi | Hospitality Professional</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f5f7;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        /* NAVIGATION */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #111827;
+            padding: 15px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        nav .logo {
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #d4af37;
+        }
+
+        /* HERO / BANNER WITH BACKGROUND & FLOATING TEXT */
+        .hero {
+            position: relative;
+            min-height: 90vh;
+            /* Background Image with Dark Gradient Overlay */
+            background: linear-gradient(
+                rgba(17, 24, 39, 0.88),
+                rgba(17, 24, 39, 0.92)
+            ), 
+            url('123.jpg') center/cover no-repeat;
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: 80px 8%;
+        }
+
+        .hero-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+        }
+
+        .hero-content {
+            max-width: 650px;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 58px;
+            line-height: 1.1;
+            margin-bottom: 15px;
+        }
+
+        .hero h2 {
+            font-size: 24px;
+            font-weight: normal;
+            color: #d4af37;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #e5e7eb;
+            margin-bottom: 30px;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+        }
+
+        /* BANNER IMAGE (PROFILE / FEATURED) */
+        .hero-image-wrapper {
+            position: relative;
+            z-index: 2;
+            flex-shrink: 0;
+        }
+
+        .hero-image-wrapper img {
+            width: 320px;
+            height: 320px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid #d4af37;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .primary {
+            background: #d4af37;
+            color: #111827;
+        }
+
+        .secondary {
+            border: 1px solid white;
+            color: white;
+        }
+
+        .secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* GENERAL SECTIONS */
+        section {
+            padding: 70px 8%;
+        }
+
+        .section-title {
+            font-size: 32px;
+            margin-bottom: 35px;
+            color: #111827;
+        }
+
+        .section-title span {
+            color: #d4af37;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        /* ABOUT */
+        .about {
+            background: white;
+        }
+
+        .about-text {
+            max-width: 850px;
+            font-size: 17px;
+        }
+
+        /* SKILLS */
+        .skills {
+            background: #f4f5f7;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .skill {
+            background: white;
+            padding: 22px;
+            border-radius: 8px;
+            border-left: 4px solid #d4af37;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .skill h3 {
+            margin-bottom: 8px;
+            color: #111827;
+        }
+
+        /* EXPERIENCE */
+        .experience {
+            background: white;
+        }
+
+        .experience-card {
+            max-width: 900px;
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 5px solid #d4af37;
+        }
+
+        .experience-card h3 {
+            font-size: 23px;
+            color: #111827;
+        }
+
+        .experience-card .role {
+            color: #d4af37;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .experience-card .date {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .experience-card ul {
+            padding-left: 20px;
+        }
+
+        .experience-card li {
+            margin-bottom: 8px;
+        }
+
+        /* EDUCATION */
+        .education {
+            background: #f4f5f7;
+        }
+
+        .education-card {
+            background: white;
+            padding: 25px;
+            margin-bottom: 18px;
+            border-radius: 8px;
+        }
+
+        .education-card h3 {
+            color: #111827;
+        }
+
+        .education-card span {
+            color: #777;
+        }
+
+        /* LANGUAGES & STRENGTHS */
+        .languages {
+            background: white;
+        }
+
+        .language-box {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .language {
+            padding: 15px 25px;
+            background: #111827;
+            color: white;
+            border-radius: 5px;
+        }
+
+        /* CONTACT */
+        .contact {
+            background: #111827;
+            color: white;
+            text-align: center;
+        }
+
+        .contact .section-title {
+            color: white;
+        }
+
+        .contact p {
+            margin: 10px 0;
+        }
+
+        .contact a {
+            color: #d4af37;
+            text-decoration: none;
+        }
+
+        /* FOOTER WITH SHORTCUTS */
+        footer {
+            background: #080c14;
+            color: #aaa;
+            padding: 50px 8% 20px;
+            font-size: 14px;
+        }
+
+        .footer-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+            text-align: left;
+        }
+
+        .footer-col h3, .footer-col h4 {
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .footer-col h3 span {
+            color: #d4af37;
+        }
+
+        .footer-col p {
+            color: #9ca3af;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .footer-shortcuts {
+            list-style: none;
+        }
+
+        .footer-shortcuts li {
+            margin-bottom: 10px;
+        }
+
+        .footer-shortcuts a {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-shortcuts a:hover {
+            color: #d4af37;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #1f2937;
+            padding-top: 20px;
+            text-align: center;
+        }
+
+        /* MOBILE RESPONSIVENESS */
+        @media (max-width: 768px) {
+
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            nav ul {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                min-height: auto;
+                padding: 60px 7%;
+            }
+
+            .hero-container {
+                flex-direction: column-reverse;
+                text-align: center;
+                gap: 30px;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero h2 {
+                font-size: 20px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .buttons {
+                justify-content: center;
+            }
+
+            .hero-image-wrapper img {
+                width: 220px;
+                height: 220px;
+            }
+
+            section {
+                padding: 55px 7%;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 27px;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+    <div class="logo">SM</div>
+
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+
+<!-- HERO & BANNER WITH IMAGE OVERLAY -->
+<header class="hero">
+    <div class="hero-container">
+        
+        <!-- Floating Text Content -->
+        <div class="hero-content">
+            <h1>Saviours Muzimi</h1>
+            <h2>Hospitality & General Job Applicant</h2>
+            <p>
+                Adaptable and self-driven Hotel and Hospitality Management student
+                with practical experience across food production, food and beverage
+                service, housekeeping and laundry operations.
+            </p>
+
+            <div class="buttons">
+                <a href="#contact" class="btn primary">Contact Me</a>
+                <a href="#experience" class="btn secondary">View Experience</a>
+            </div>
+        </div>
+
+        <!-- Banner Image / Profile Picture -->
+        <div class="hero-image-wrapper">
+            <img src="123.jpg" alt="Saviours Muzimi Profile Photo">
+        </div>
+
+    </div>
+</header>
+
+
+<!-- ABOUT -->
+<section class="about" id="about">
+    <div class="container">
+        <h2 class="section-title">
+            About <span>Me</span>
+        </h2>
+        <p class="about-text">
+            I am a Hotel and Hospitality Management student at Kisii University
+            with practical exposure gained through industrial attachment at Eka
+            Hotel, Eldoret. I have experience working across different hotel
+            departments and adapting to different operational demands.
+
+            I am reliable, honest, self-driven and adaptable. I enjoy learning
+            new tasks, working with others and contributing to an organized and
+            professional working environment.
+        </p>
+    </div>
+</section>
+
+
+<!-- EXPERIENCE -->
+<section class="experience" id="experience">
+    <div class="container">
+        <h2 class="section-title">
+            Practical <span>Experience</span>
+        </h2>
+
+        <div class="experience-card">
+            <h3>Eka Hotel, Eldoret</h3>
+            <p class="role">Hospitality Operations Trainee</p>
+            <p class="date">5 May – 2 August 2026</p>
+
+            <ul>
+                <li>Gained practical exposure in food production, food and beverage service, housekeeping and laundry operations.</li>
+                <li>Assisted with food preparation and production while following hygiene, safety and quality procedures.</li>
+                <li>Supported restaurant operations, including guest service, table service and maintaining service standards.</li>
+                <li>Worked with staff to maintain cleanliness, organization and efficient workflow.</li>
+                <li>Gained practical exposure to housekeeping and laundry procedures and operational equipment.</li>
+                <li>Adapted to different departments, shifts and operational demands while working under supervision.</li>
+                <li>Developed practical skills in teamwork, communication, time management and professional conduct.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+<!-- EDUCATION -->
+<section class="education" id="education">
+    <div class="container">
+        <h2 class="section-title">
+            <span>Education</span>
+        </h2>
+
+        <div class="education-card">
+            <h3>Kisii University</h3>
+            <p>BSc. Hotel and Hospitality Management</p>
+            <span>2025 – Present | Expected Graduation: 2027</span>
+        </div>
+
+        <div class="education-card">
+            <h3>Emusire Boys High School</h3>
+            <p>Kenya Certificate of Secondary Education (KCSE)</p>
+            <span>2019 – 2022 | Grade: B Plain</span>
+        </div>
+    </div>
+</section>
+
+
+<!-- SKILLS -->
+<section class="skills" id="skills">
+    <div class="container">
+        <h2 class="section-title">
+            My <span>Skills</span>
+        </h2>
+
+        <div class="skills-grid">
+            <div class="skill">
+                <h3>Customer Service</h3>
+                <p>Guest relations and professional customer interaction.</p>
+            </div>
+            <div class="skill">
+                <h3>Communication</h3>
+                <p>Strong verbal and written communication.</p>
+            </div>
+            <div class="skill">
+                <h3>Teamwork</h3>
+                <p>Able to work effectively with colleagues.</p>
+            </div>
+            <div class="skill">
+                <h3>Adaptability</h3>
+                <p>Comfortable adjusting to new tasks and environments.</p>
+            </div>
+            <div class="skill">
+                <h3>Time Management</h3>
+                <p>Able to organize tasks and work within operational demands.</p>
+            </div>
+            <div class="skill">
+                <h3>Hospitality Operations</h3>
+                <p>Food production, F&B service, housekeeping and laundry.</p>
+            </div>
+            <div class="skill">
+                <h3>POS Operations</h3>
+                <p>Basic practical exposure to point-of-sale operations.</p>
+            </div>
+            <div class="skill">
+                <h3>Microsoft Word</h3>
+                <p>Basic document preparation and editing.</p>
+            </div>
+            <div class="skill">
+                <h3>Canva</h3>
+                <p>Basic design and visual content creation.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- PERSONAL STRENGTHS -->
+<section class="about">
+    <div class="container">
+        <h2 class="section-title">
+            Personal <span>Strengths</span>
+        </h2>
+
+        <div class="language-box">
+            <div class="language">Adaptable</div>
+            <div class="language">Honest</div>
+            <div class="language">Self-Driven</div>
+            <div class="language">Reliable</div>
+            <div class="language">All-Rounder</div>
+        </div>
+    </div>
+</section>
+
+
+<!-- LANGUAGES -->
+<section class="languages">
+    <div class="container">
+        <h2 class="section-title">
+            <span>Languages</span>
+        </h2>
+
+        <div class="language-box">
+            <div class="language">English — Very Fluent</div>
+            <div class="language">Kiswahili — Very Fluent</div>
+        </div>
+    </div>
+</section>
+
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+    <div class="container">
+        <h2 class="section-title">
+            Let's <span>Connect</span>
+        </h2>
+
+        <p>
+            I am open to general job opportunities and professional
+            opportunities where I can learn, contribute and grow.
+        </p>
+        <p>📞 <a href="tel:0704476514">0704476514</a></p>
+        <p>✉️ <a href="mailto:muzimisaviours@gmail.com">muzimisaviours@gmail.com</a></p>
+        <p>📍 Kenya</p>
+
+        <!-- DOWNLOAD CV BUTTON -->
+        <div class="cv-download">
+            <a href="cv.pdf" download="Saviours_Muzimi_CV.pdf" class="btn-download">
+                📄 Download CV
+            </a>
+        </div>
+    </div>
+</section>
+
+
+<!-- FOOTER WITH SHORTCUTS -->
+<footer>
+    <div class="footer-container">
+        
+        <div class="footer-col">
+            <h3>Saviours <span>Muzimi</span></h3>
+            <p>Dedicated Hospitality Professional skilled in Food & Beverage Operations, Guest Relations, and Facility Management.</p>
+        </div>
+
+        <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul class="footer-shortcuts">
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills & Expertise</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>Direct Contact</h4>
+            <ul class="footer-shortcuts">
+                <li><a href="tel:0704476514">📞 0704476514</a></li>
+                <li><a href="mailto:muzimisaviours@gmail.com">✉️ Email Me</a></li>
+                <li><a href="#contact">📍 Kenya</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 Saviours Muzimi. All Rights Reserved.
+    </div>
+</footer>
+
+</body>
+</html>
